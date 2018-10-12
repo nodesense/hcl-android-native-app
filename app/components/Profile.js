@@ -27,7 +27,7 @@ export default class Profile extends React.Component{
       };
  
     render() {
-        console.log('Profile ');
+        console.log('Profile 2');
  
         return (
             <View>
@@ -36,10 +36,7 @@ export default class Profile extends React.Component{
                 <Badge
                     value={3}
                     textStyle={{ color: 'white' }}
-
                     width={50}
-
-
                     />
 
                     <CheckBox

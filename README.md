@@ -105,3 +105,32 @@ https://react-native-training.github.io/react-native-elements/docs/0.19.0/forms.
 yarn add react-native-elements
 ```
 
+
+# JAVA
+
+Package 
+    Module
+        FileSys
+        Sqlite 
+
+    View Manager - UI
+        Text, TextInput, Button
+
+        Native UI
+            Android
+            iOS
+
+        React
+            Virtual DOM
+
+# Expo 
+    JS into Existing Expo APP - Learning
+    Build APK/APP file --> export your code to expo website, apk/app files
+
+    -- Limitation
+        Write your own Java - not possible
+
+
+    -- Chat code  [Non React Native module] - Java code - Cannot access from JS
+
+    -- Wrap into a React Native Module - Java Code - BRIDGE - JS 

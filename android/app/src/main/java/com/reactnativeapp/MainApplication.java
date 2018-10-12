@@ -30,7 +30,9 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new RNFSPackage(),
             new VectorIconsPackage(),
-            new SQLitePluginPackage()
+            new SQLitePluginPackage(),
+            new ToastPackage(),
+              new ButtonViewPackage(null)
       );
     }
 

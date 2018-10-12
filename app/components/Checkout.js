@@ -12,6 +12,12 @@ import { FormLabel,
          FormInput, 
          FormValidationMessage } from 'react-native-elements'
 
+import {NativeModules} from 'react-native';
+
+import ButtonView from './ButtonView';
+
+// ToastExample MUST match getName() in Java Module
+const ToastExample = NativeModules.ToastExample; 
 
 export default class Checkout extends React.Component{
 
@@ -39,6 +45,7 @@ export default class Checkout extends React.Component{
         this.state = {
             fullName: '',
             address: '',
+            addressError: true,
             shipToOffice: true
         }
     }
@@ -49,8 +56,27 @@ export default class Checkout extends React.Component{
             fullName: value
         })
     }
-     
 
+
+    onAddressChange = (value) => {
+        console.log('address in input ', value);
+        this.setState({
+            address: value,
+            addressError: value.length <3 ? true: false
+        })
+    }
+
+    showToast = () => {
+        ToastExample.show("Hello from JS ", 5000);
+    }
+     
+    addStrings = () => {
+        ToastExample.addTwoString("Hello", "world")
+                    .then (result => {
+                        ToastExample.show(result, 15000);
+                    })
+    }
+     
     render() {
         // To get the all params from navigation
         console.log('Checkout render', this.props.navigation.state.params);
@@ -72,11 +98,16 @@ export default class Checkout extends React.Component{
                 <TextInput value={this.state.fullName} 
                            onChangeText= {this.onNameChange}
                 />
-
+                {/*
                 <FormLabel>Address </FormLabel>
-                <FormInput onChangeText={someFunction}/>
-                <FormValidationMessage>Error message</FormValidationMessage>
+                <FormInput 
+                            value={this.state.address}
+                            onChangeText={this.onAddressChange}/>
 
+                {!this.state.addressError && 
+                    <FormValidationMessage>Address should be 3 chars</FormValidationMessage>
+                }*/}
+                
                 <Button onPress={() => {
                         this.props.navigation.setParams({pageTitle: 'Updated!'})
                     } }
@@ -84,7 +115,18 @@ export default class Checkout extends React.Component{
                     >
                         
                 </Button>
- 
+
+                <Button onPress={this.showToast} title="show toast">
+                </Button>
+
+                <Button onPress={this.addStrings} title="Add str">
+                </Button>
+
+                <ButtonView style= { { height: 100, width: 100} }  />
+
+                <ButtonView style= { { height: 100, width: 100} } 
+                            textTitle ="Hello Android" />
+
  
             </View>
         )
