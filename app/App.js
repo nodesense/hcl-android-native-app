@@ -21,7 +21,8 @@ import ReduxFuncCounter from './containers/ReduxFuncCounter';
 import Profile from './components/Profile';
 import Login from './components/Login';
 
-
+import GeolocationExample from './components/GeolocationExample';
+import FileSys from './components/FileSys';
 
 
 import  Ionicons from 'react-native-vector-icons/Ionicons';
@@ -56,6 +57,14 @@ const StackNavigator = createStackNavigator({
   
   Counter: {
     screen: Counter
+  },
+
+  Geolocation: {
+    screen: GeolocationExample
+  },
+
+  FileSys: {
+    screen: FileSys
   }
 },
     {

@@ -1,4 +1,4 @@
-// Home.js
+// app/components/Home.js
 import React from 'react';
 
 import {View, Text, Button, Alert} from 'react-native';
@@ -52,6 +52,18 @@ export default class Home extends React.Component{
                 <Button title="Counter" 
                         onPress={ () => this.gotoPage('Counter')} />
 
+                
+                <Button title="Geolocation" 
+                        onPress={ () => this.gotoPage('Geolocation')} />
+
+                 <Button title="FileSys" 
+                        onPress={ () => this.gotoPage('FileSys')} />
+
+                <Button title="SqliteAccess" 
+                        onPress={ () => this.gotoPage('SqliteAccess')} />
+                
+                <Button title="Camera" 
+                        onPress={ () => this.gotoPage('Camera')} />
             </View>
         )
     }
