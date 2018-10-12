@@ -27,7 +27,7 @@ export default class Profile extends React.Component{
       };
  
     render() {
-        console.log('Profile render');
+        console.log('Profile ');
  
         return (
             <View>
