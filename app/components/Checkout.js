@@ -1,9 +1,20 @@
 // Checkout.js
 import React from 'react';
 
-import {View, Text, Button, Alert} from 'react-native';
- 
+import {View, 
+        Text, 
+        Button, 
+        Alert,
+        TextInput
+    } from 'react-native';
+
+import { FormLabel, 
+         FormInput, 
+         FormValidationMessage } from 'react-native-elements'
+
+
 export default class Checkout extends React.Component{
+
 
     // static navigationOptions = {
     //     title: 'Checkout'
@@ -24,8 +35,20 @@ export default class Checkout extends React.Component{
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            fullName: '',
+            address: '',
+            shipToOffice: true
+        }
     }
    
+    onNameChange = (value) => {
+        console.log('value in input ', value);
+        this.setState({
+            fullName: value
+        })
+    }
      
 
     render() {
@@ -44,6 +67,15 @@ export default class Checkout extends React.Component{
                 <Text> Coupon: {coupon}</Text>
 
                 <Text> City: {address.city}</Text>
+
+                <Text>Full Name</Text>
+                <TextInput value={this.state.fullName} 
+                           onChangeText= {this.onNameChange}
+                />
+
+                <FormLabel>Address </FormLabel>
+                <FormInput onChangeText={someFunction}/>
+                <FormValidationMessage>Error message</FormValidationMessage>
 
                 <Button onPress={() => {
                         this.props.navigation.setParams({pageTitle: 'Updated!'})

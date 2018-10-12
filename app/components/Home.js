@@ -1,8 +1,12 @@
 // app/components/Home.js
 import React from 'react';
 
-import {View, Text, Button, Alert} from 'react-native';
- 
+import {View, Text, Button, Alert, ScrollView} from 'react-native';
+
+// Metro Bundler, build bundles {ios bundle, android bundle}
+// bunderl automatically pick  .ios.js or .android.js the file based on the platform
+import About from './About';
+
 export default class Home extends React.Component{
     static navigationOptions = {
         title: 'Home'
@@ -27,6 +31,7 @@ export default class Home extends React.Component{
  
         return (
             <View>
+                <ScrollView>
                 <Text style={ {fontSize: 30}}> Home </Text>
                 <Button title="Cart" 
                         onPress={ () => this.gotoPage('Cart')} />
@@ -64,6 +69,9 @@ export default class Home extends React.Component{
                 
                 <Button title="Camera" 
                         onPress={ () => this.gotoPage('Camera')} />
+
+                <About />
+                </ScrollView>
             </View>
         )
     }

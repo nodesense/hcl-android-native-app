@@ -23,7 +23,7 @@ import Login from './components/Login';
 
 import GeolocationExample from './components/GeolocationExample';
 import FileSys from './components/FileSys';
-
+import SqliteAccess from './components/SqliteAccess';
 
 import  Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -65,6 +65,10 @@ const StackNavigator = createStackNavigator({
 
   FileSys: {
     screen: FileSys
+  },
+
+  SqliteAccess: {
+    screen: SqliteAccess
   }
 },
     {

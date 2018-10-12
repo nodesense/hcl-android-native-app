@@ -95,3 +95,13 @@ for ios
 react-native link react-native-sqlite-storage
 
 for android, manual patch needed, refer link 
+
+
+# Addon controls
+
+https://react-native-training.github.io/react-native-elements/docs/0.19.0/forms.html
+
+```
+yarn add react-native-elements
+```
+
